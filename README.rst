@@ -20,3 +20,12 @@ such as when working with time.
 >>> d[datetime.datetime(2000, 1, 1, 12, 0, 4)] = 2
 >>> d[datetime.datetime(2000, 1, 1, 12, 0, 1)]
 1
+
+Installation
+------------
+
+FuzzySortedDict is easily installed with ``pip``.
+
+.. code::
+
+    pip install FuzzySortedDict
