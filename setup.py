@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 # To use a consistent encoding
 from codecs import open
 from os import path
@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='FuzzySortedDict',
-    version='1.0.0',
+    version='1.0.1',
     description='A sorted dictionary with nearest-key lookup',
     long_description=long_description,
     url='https://github.com/ncsuarc/FuzzySortedDict',
@@ -30,6 +30,6 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     keywords='dictionary',
-    packages=find_packages(),
+    packages=['FuzzySortedDict'],
     install_requires=['blist'],
 )
