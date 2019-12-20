@@ -2,6 +2,8 @@ import bisect
 
 import blist
 
+__version__ = "1.0.1"
+
 
 class FuzzySortedDict(blist.sorteddict):
     """
