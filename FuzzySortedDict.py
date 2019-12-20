@@ -2,6 +2,9 @@ import bisect
 
 import blist
 
+__version__ = "1.0.1"
+
+
 class FuzzySortedDict(blist.sorteddict):
     """
     Sorted dictionary that returns the nearest matching key's value
@@ -27,7 +30,7 @@ class FuzzySortedDict(blist.sorteddict):
     """
 
     def __init__(self, *args, **kwargs):
-        self.rounding = kwargs.pop('rounding', 0)
+        self.rounding = kwargs.pop("rounding", 0)
 
         super(FuzzySortedDict, self).__init__(*args, **kwargs)
 
@@ -57,24 +60,23 @@ class FuzzySortedDict(blist.sorteddict):
             # Requested key is greater than any key in the list.
             if self.rounding > 0:
                 raise KeyError("No key towards infinity found")
-            return key_list[index-1]
+            return key_list[index - 1]
         elif key_list[index] == request:
             # Exact match
             return key_list[index]
         elif index == 0 and self.rounding < 0:
             # Requested key is smaller than any key in the list.
             raise KeyError("No key towards -infinity found")
-        elif self.rounding > 0: # Towards inf
+        elif self.rounding > 0:  # Towards inf
             return key_list[index]
-        elif self.rounding < 0: # Towards -inf
-            return key_list[index-1]
+        elif self.rounding < 0:  # Towards -inf
+            return key_list[index - 1]
         else:
-            if abs(key_list[index] - request) < \
-                abs(key_list[index-1] - request):
+            if abs(key_list[index] - request) < abs(key_list[index - 1] - request):
                 # key at index is closer than previous key
                 return key_list[index]
             else:
-                return key_list[index-1]
+                return key_list[index - 1]
 
     def __getitem__(self, key):
         """
