@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "FuzzySortedDict"
+name = "fuzzysorteddict"
 version = "1.0.1"
 description = "A sorted dictionary with nearest-key lookup"
 authors = ["NC State Aerial Robotics Club <aerialrobotics@ncsu.edu>"]

@@ -1,5 +1,6 @@
-from FuzzySortedDict import FuzzySortedDict
 import pytest
+
+from fuzzysorteddict import FuzzySortedDict
 
 
 def test_basic():
@@ -12,6 +13,22 @@ def test_basic():
     assert fsd[0] == "a"
     fsd[0] = "b"
     assert fsd[0] == "b"
+
+
+def test_iteration():
+    # In sorted order by key
+    exp_items = (
+        (0, "a"),
+        (1, "b"),
+        (2, "c"),
+    )
+
+    fsd = FuzzySortedDict()
+    for k, v in exp_items:
+        fsd[k] = v
+
+    for act, exp in zip(fsd.items(), exp_items):
+        assert act == exp
 
 
 def test_round_closest():
