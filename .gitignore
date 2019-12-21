@@ -1,6 +1,12 @@
-*.pyc
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
 
+# Build artifacts
 build/
 dist/
-__pycache__/
+*.egg
 *.egg-info/
+
+# CI artifacts
+.tox/
