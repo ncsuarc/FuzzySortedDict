@@ -1,11 +1,9 @@
-import bisect
-
-import blist
+from sortedcontainers import SortedDict
 
 __version__ = "1.0.1"
 
 
-class FuzzySortedDict(blist.sorteddict):
+class FuzzySortedDict(SortedDict):
     """
     Sorted dictionary that returns the nearest matching key's value
 
@@ -52,7 +50,7 @@ class FuzzySortedDict(blist.sorteddict):
         """
         key_list = self.keys()
 
-        index = bisect.bisect_left(key_list, request)
+        index = self.bisect_left(request)
 
         if len(key_list) <= 0:  # Empty dictionary!
             raise KeyError(request)
