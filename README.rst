@@ -1,9 +1,9 @@
-FuzzySortedDict
+fuzzysorteddict
 ===============
 
-FuzzySortedDict is a sorted dictionary with nearest-key lookups.
+fuzzysorteddict is a sorted dictionary with nearest-key lookups.
 
->>> from FuzzySortedDict import FuzzySortedDict
+>>> from fuzzysorteddict import FuzzySortedDict
 >>> d = FuzzySortedDict()
 >>> d[1] = 1
 >>> d[2] = 2
@@ -13,7 +13,7 @@ FuzzySortedDict is a sorted dictionary with nearest-key lookups.
 FuzzySortedDict can be particularly useful for sparsely populated ranges,
 such as when working with time.
 
->>> from FuzzySortedDict import FuzzySortedDict
+>>> from fuzzysorteddict import FuzzySortedDict
 >>> import datetime
 >>> d = FuzzySortedDict()
 >>> d[datetime.datetime(2000, 1, 1, 12, 0, 0)] = 1
@@ -28,4 +28,4 @@ FuzzySortedDict is easily installed with ``pip``.
 
 .. code::
 
-    pip install FuzzySortedDict
+    pip install fuzzysorteddict

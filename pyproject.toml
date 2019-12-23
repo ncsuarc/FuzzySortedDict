@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "FuzzySortedDict"
+name = "fuzzysorteddict"
 version = "1.0.1"
 description = "A sorted dictionary with nearest-key lookup"
 authors = ["NC State Aerial Robotics Club <aerialrobotics@ncsu.edu>"]
@@ -14,5 +14,5 @@ blist = "^1.3"
 [tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry>=0.12"]
+requires = ["poetry>=1.0.0"]
 build-backend = "poetry.masonry.api"
