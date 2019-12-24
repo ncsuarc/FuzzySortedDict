@@ -12,6 +12,21 @@ matrix:
     - python: pypy3
       env: TOXENV=pypy3
 install:
-  - pip install tox
+- pip install tox
 script:
-  - tox
+- tox
+
+before_deploy:
+- pip install poetry
+deploy:
+  provider: script
+  script: poetry publish --build -u $PYPI_USER -p $PYPI_PASSWORD
+  on:
+    repo: ncsuarc/FuzzySortedDict
+    # Only deploy on the first one
+    python: 3.5
+    tags: true
+env:
+  global:
+    - PYPI_USER=__token__
+    - secure: OjnQQlG+j1vipH6AHu9xS4sfV1xp8u078do+w0Xu/Kpy/vuk267JFuA8w+94oUPsnjhtahxaoF1olbLS3z+U+hXIiMlpo7Qwrdp//Ku6UlqD/lxZbw6wlvQ6pmAam+hkjJXZ98s1Kav/fFqfDe5aqNR73zRtTic8I897Z73kYSNNxW9SgpFtZADH1wmS/TbF6aekuK7F2lJ7RPxQokVHW0224EoN90nDou9h5VRCknYJY0rCgrqjcIwTTHNMFeeEeKHF4miHiRx7jCI1lxeOz+fyqo3HHqqVTB1nKjVlW3IIpRjwEZsVC4lcFUG7mlBzwbJgvhAmqdrWX+6oq2e2pkp3O9fSrIdjF0itToUEailDhYq8T3gPPw6wtLOK8j0ytSQfFxpZfx/Cg4YldYQ/LMhUODsTKXEgARM6sSHNFzGCC6+0+33XjP8Xi4G60hp8jWtUyaLg8vgur9lbrJSnRzBO25RG33GAjUNbqWS2WYE9V94An39ZrfbtsOWnCAZpEkue+tByxs3Pw7aKnlKjjbcfF5WrDAMwOqDnXiuZgMzz/htS7fDxaGbnKrkVrvP+9tbWFDAzml4Jfcrr6Gsj5amp6QWLiqSnXvt0FqfaiEzRZiJGY8kCvC58aW5LccOGNo4sh++vUjHLTpfbulu1I9wIAvXaph7pyNFB4XekNlg=
