@@ -1,6 +1,9 @@
 fuzzysorteddict
 ===============
 
+.. image:: https://travis-ci.com/ncsuarc/FuzzySortedDict.svg?branch=master
+    :target: https://travis-ci.com/ncsuarc/FuzzySortedDict
+
 fuzzysorteddict is a sorted dictionary with nearest-key lookups.
 
 >>> from fuzzysorteddict import FuzzySortedDict
