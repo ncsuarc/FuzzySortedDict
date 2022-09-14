@@ -1,5 +1,7 @@
 fuzzysorteddict
 ===============
+**This project is no longer maintained, see [python-sortedcollections](https://github.com/grantjenks/python-sortedcollections) for maintained library
+
 
 .. image:: https://travis-ci.com/ncsuarc/FuzzySortedDict.svg?branch=master
     :target: https://travis-ci.com/ncsuarc/FuzzySortedDict
